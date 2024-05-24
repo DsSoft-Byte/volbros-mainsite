@@ -3,60 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volbros - Volvo Fan Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <title>Volbros - Volvo Fanclub</title>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="nav-left">
-                <a href="#" class="logo">Volbros</a>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#events">Events</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<body class="font-sans">
 
-    <section id="home" class="hero">
-        <h1>Welcome to Volbros</h1>
-        <p>The ultimate Volvo fan club</p>
-        <img src="volvo-car.jpg" alt="BackgroundImagePlaceholder">
-    </section>
+<!-- Navbar -->
+<nav class="bg-red-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center">
+            <span class="ml-2 text-xl font-semibold">Volbros</span>
+        </div>
+        <!-- Responsive menu button for mobile -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-white hover:text-gray-300 focus:outline-none">
+                <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+        <!-- Navigation links for desktop -->
+        <div class="hidden md:flex items-center space-x-4">
+            <a href="#home" class="hover:text-gray-300">Home</a>
+            <a href="#videos" class="hover:text-gray-300">Gallery</a>
+            <a href="#offer" class="hover:text-gray-300">Meets</a>
+            <a href="#contact" class="hover:text-gray-300">Contact</a>
+            <a href="https://volbros.club/rules" class="hover:text-gray-300">Meet rules</a>
+        </div>
+    </div>
+    <!-- Responsive menu for mobile -->
+    <div id="mobile-menu" class="md:hidden hidden">
+        <a href="#home" class="block p-2 hover:bg-gray-700">Home</a>
+        <a href="#videos" class="block p-2 hover:bg-gray-700">Gallery</a>
+        <a href="#offer" class="block p-2 hover:bg-gray-700">Meets</a>
+        <a href="#contact" class="block p-2 hover:bg-gray-700">Contact</a>
+        <a href="https://volbros.club/rules" class="block p-2 hover:bg-gray-700">Meet rules</a>
+    </div>
+</nav>
 
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Information about the club, its history, mission, and core values.</p>
-        <p>Please inform @Daniel what y'all want to have here, website will be finished approx on the 28/05/2024 20:00 GMT+2</p>
-        <p>With love, Polish Volbros community!!!</p>
-    </section>
+<script>
+    // Toggle mobile menu visibility
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery-container">
-            <!-- Gallery images will go here -->
+    <!-- Full Screen Background Section -->
+<section id="home" class="bg-cover bg-center relative min-h-screen flex items-center" style="background-image: url('bgk.jpeg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="container mx-auto text-center relative z-10">
+        <h1 class="text-4xl font-bold text-white mb-4">Welcome to Volbros!</h1>
+        <p class="text-lg text-white mb-8">The ultimate Volvo fanclub.</p>
+        <a href="#videos" class="relative group">
+        </a>
+    </div>
+</section>
+
+    <!-- Videos Section -->
+    <section id="videos" class="container mx-auto py-8 md:py-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-8">Latest Shots!</h2>
+        <!-- Add pictures of your signature scooter here -->
+        <!-- Example: -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+            <!-- Image placeholders -->
+            <img src="3bolbs.jpeg" alt="3 Volvos in a triangle" class="w-full h-auto mb-4 md:mb-8">
+            <img src="sexybolb.jpeg" alt="One sexy S80" class="w-full h-auto mb-4 md:mb-8">
+            <img src="manybolbs.jpeg" alt="Many cars in a line" class="w-full h-auto mb-4 md:mb-8">
+            <!-- Add more images as needed -->
         </div>
     </section>
 
-    <section id="events">
-        <h2>Events</h2>
-        <p>Upcoming events and meetings for club members.</p>
+    <section class="container mx-auto py-8 md:py-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-8">Our DNA</h2>
+                <p class="text-md md:text-lg text-center mb-4 md:mb-8">Something about our club here</p>
+                <!-- Add more details about your expertise and experience here -->
     </section>
 
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>To join our WhatsApp group, please use the following link:</p>
-        <p><a href="https://chat.whatsapp.com/invite/link" target="_blank">Join WhatsApp Group</a></p>
-        <p>For any inquiries, please contact:</p>
-        <p><strong>NewMemberHandlingPersonName *probably maciek*</strong></p>
+    <!-- Offers -->
+    <section id="offer" class="bg-gray-100 py-8 md:py-16">
+        <div class="container mx-auto">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-8">Volbros meet 2.0:</h2>
+            <p class="text-md md:text-lg text-center mb-4 md:mb-8">📍Parkeerterrein Transferium Horst
+                ⏳15 june
+                ⏱️11:00 - Join WhatsApp group for more information!</p>
+            <!-- Add more details about your expertise and experience here -->
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Volbros. All rights reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto py-8 md:py-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 md:mb-8">Contact</h2>
+        <p class="text-md md:text-lg text-center mb-4 md:mb-8">Please join our WhatsApp group!</p>
+        <p class="text-md md:text-lg text-center mb-4 md:mb-8">---> <a href="https://chat.whatsapp.com/Ch8030Cqoad6QRaxxnoV6y" target="_blank" class="highlight-link">Join us Here!</a> <---</p>
+        <p class="text-md md:text-lg text-center mb-4 md:mb-8">It's really worth it! The gateway to everything Volvo!</p>
+        <!-- Add a contact form here -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p class="text-md md:text-lg">&copy; 2024 - Volbros</p>
     </footer>
+
 </body>
 </html>
